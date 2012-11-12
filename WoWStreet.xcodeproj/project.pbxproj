@@ -1,0 +1,359 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B2AD877164A89D5000731E2 /* TargetDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AD876164A89D5000731E2 /* TargetDummy.m */; };
+		9B2AD87C164AAC61000731E2 /* RuneDrawingUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AD87B164AAC61000731E2 /* RuneDrawingUIView.m */; };
+		9B7C7217161EF2F60007B808 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C7216161EF2F60007B808 /* Default-568h@2x.png */; };
+		9BD58AE11649673300395C02 /* FightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD58ADF1649673300395C02 /* FightViewController.m */; };
+		9BD58AE21649673300395C02 /* FightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BD58AE01649673300395C02 /* FightViewController.xib */; };
+		9BD958CE16030FB100782FC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD958CD16030FB100782FC6 /* UIKit.framework */; };
+		9BD958D016030FB100782FC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD958CF16030FB100782FC6 /* Foundation.framework */; };
+		9BD958D216030FB100782FC6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD958D116030FB100782FC6 /* CoreGraphics.framework */; };
+		9BD958D816030FB100782FC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BD958D616030FB100782FC6 /* InfoPlist.strings */; };
+		9BD958DA16030FB100782FC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD958D916030FB100782FC6 /* main.m */; };
+		9BD958DE16030FB100782FC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD958DD16030FB100782FC6 /* AppDelegate.m */; };
+		9BD958E116030FB100782FC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD958E016030FB100782FC6 /* ViewController.m */; };
+		9BD958E416030FB100782FC6 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BD958E216030FB100782FC6 /* ViewController.xib */; };
+		9BD958F016031A1200782FC6 /* DrawingUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD958EF16031A1200782FC6 /* DrawingUIView.m */; };
+		9BFD7E33164D52CA003BDD38 /* SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7E32164D52CA003BDD38 /* SQLiteManager.m */; };
+		9BFD7E42164D5936003BDD38 /* RunesDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7E41164D5936003BDD38 /* RunesDAO.m */; };
+		9BFD7E48164D5B74003BDD38 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFD7E47164D5B74003BDD38 /* libsqlite3.0.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9B2AD875164A89D5000731E2 /* TargetDummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetDummy.h; sourceTree = "<group>"; };
+		9B2AD876164A89D5000731E2 /* TargetDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetDummy.m; sourceTree = "<group>"; };
+		9B2AD87A164AAC61000731E2 /* RuneDrawingUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuneDrawingUIView.h; sourceTree = "<group>"; };
+		9B2AD87B164AAC61000731E2 /* RuneDrawingUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuneDrawingUIView.m; sourceTree = "<group>"; };
+		9B7C7216161EF2F60007B808 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		9BD58ADE1649673300395C02 /* FightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FightViewController.h; sourceTree = "<group>"; };
+		9BD58ADF1649673300395C02 /* FightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FightViewController.m; sourceTree = "<group>"; };
+		9BD58AE01649673300395C02 /* FightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FightViewController.xib; sourceTree = "<group>"; };
+		9BD958C916030FB100782FC6 /* WoWStreet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoWStreet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD958CD16030FB100782FC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9BD958CF16030FB100782FC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9BD958D116030FB100782FC6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9BD958D516030FB100782FC6 /* WoWStreet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WoWStreet-Info.plist"; sourceTree = "<group>"; };
+		9BD958D716030FB100782FC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9BD958D916030FB100782FC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9BD958DB16030FB100782FC6 /* WoWStreet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WoWStreet-Prefix.pch"; sourceTree = "<group>"; };
+		9BD958DC16030FB100782FC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9BD958DD16030FB100782FC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9BD958DF16030FB100782FC6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9BD958E016030FB100782FC6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9BD958E316030FB100782FC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		9BD958EE16031A1200782FC6 /* DrawingUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingUIView.h; sourceTree = "<group>"; };
+		9BD958EF16031A1200782FC6 /* DrawingUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingUIView.m; sourceTree = "<group>"; };
+		9BFD7E31164D52CA003BDD38 /* SQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteManager.h; sourceTree = "<group>"; };
+		9BFD7E32164D52CA003BDD38 /* SQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteManager.m; sourceTree = "<group>"; };
+		9BFD7E40164D5936003BDD38 /* RunesDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunesDAO.h; sourceTree = "<group>"; };
+		9BFD7E41164D5936003BDD38 /* RunesDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunesDAO.m; sourceTree = "<group>"; };
+		9BFD7E47164D5B74003BDD38 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9BD958C616030FB100782FC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BFD7E48164D5B74003BDD38 /* libsqlite3.0.dylib in Frameworks */,
+				9BD958CE16030FB100782FC6 /* UIKit.framework in Frameworks */,
+				9BD958D016030FB100782FC6 /* Foundation.framework in Frameworks */,
+				9BD958D216030FB100782FC6 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B29A9BB16037526006E85EE /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				9B2AD875164A89D5000731E2 /* TargetDummy.h */,
+				9B2AD876164A89D5000731E2 /* TargetDummy.m */,
+				9B2AD87A164AAC61000731E2 /* RuneDrawingUIView.h */,
+				9B2AD87B164AAC61000731E2 /* RuneDrawingUIView.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		9B2AD879164AA6BA000731E2 /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				9BD958DF16030FB100782FC6 /* ViewController.h */,
+				9BD958E016030FB100782FC6 /* ViewController.m */,
+				9BD958E216030FB100782FC6 /* ViewController.xib */,
+				9BD958EE16031A1200782FC6 /* DrawingUIView.h */,
+				9BD958EF16031A1200782FC6 /* DrawingUIView.m */,
+			);
+			name = Legacy;
+			sourceTree = "<group>";
+		};
+		9BD958BE16030FB100782FC6 = {
+			isa = PBXGroup;
+			children = (
+				9BD958D316030FB100782FC6 /* WoWStreet */,
+				9BD958CC16030FB100782FC6 /* Frameworks */,
+				9BD958CA16030FB100782FC6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9BD958CA16030FB100782FC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BD958C916030FB100782FC6 /* WoWStreet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BD958CC16030FB100782FC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BFD7E47164D5B74003BDD38 /* libsqlite3.0.dylib */,
+				9BD958CD16030FB100782FC6 /* UIKit.framework */,
+				9BD958CF16030FB100782FC6 /* Foundation.framework */,
+				9BD958D116030FB100782FC6 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BD958D316030FB100782FC6 /* WoWStreet */ = {
+			isa = PBXGroup;
+			children = (
+				9BFD7E2F164D52B4003BDD38 /* SQLite */,
+				9B29A9BB16037526006E85EE /* Objects */,
+				9BD958DC16030FB100782FC6 /* AppDelegate.h */,
+				9BD958DD16030FB100782FC6 /* AppDelegate.m */,
+				9BD58ADE1649673300395C02 /* FightViewController.h */,
+				9BD58ADF1649673300395C02 /* FightViewController.m */,
+				9BD58AE01649673300395C02 /* FightViewController.xib */,
+				9B7C7216161EF2F60007B808 /* Default-568h@2x.png */,
+				9B2AD879164AA6BA000731E2 /* Legacy */,
+				9BD958D416030FB100782FC6 /* Supporting Files */,
+			);
+			path = WoWStreet;
+			sourceTree = "<group>";
+		};
+		9BD958D416030FB100782FC6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9BD958D516030FB100782FC6 /* WoWStreet-Info.plist */,
+				9BD958D616030FB100782FC6 /* InfoPlist.strings */,
+				9BD958D916030FB100782FC6 /* main.m */,
+				9BD958DB16030FB100782FC6 /* WoWStreet-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9BFD7E2F164D52B4003BDD38 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				9BFD7E31164D52CA003BDD38 /* SQLiteManager.h */,
+				9BFD7E32164D52CA003BDD38 /* SQLiteManager.m */,
+				9BFD7E40164D5936003BDD38 /* RunesDAO.h */,
+				9BFD7E41164D5936003BDD38 /* RunesDAO.m */,
+			);
+			name = SQLite;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9BD958C816030FB100782FC6 /* WoWStreet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BD958E716030FB100782FC6 /* Build configuration list for PBXNativeTarget "WoWStreet" */;
+			buildPhases = (
+				9BD958C516030FB100782FC6 /* Sources */,
+				9BD958C616030FB100782FC6 /* Frameworks */,
+				9BD958C716030FB100782FC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WoWStreet;
+			productName = WoWStreet;
+			productReference = 9BD958C916030FB100782FC6 /* WoWStreet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9BD958C016030FB100782FC6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Magic Dealers";
+			};
+			buildConfigurationList = 9BD958C316030FB100782FC6 /* Build configuration list for PBXProject "WoWStreet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9BD958BE16030FB100782FC6;
+			productRefGroup = 9BD958CA16030FB100782FC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9BD958C816030FB100782FC6 /* WoWStreet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9BD958C716030FB100782FC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BD958D816030FB100782FC6 /* InfoPlist.strings in Resources */,
+				9BD958E416030FB100782FC6 /* ViewController.xib in Resources */,
+				9B7C7217161EF2F60007B808 /* Default-568h@2x.png in Resources */,
+				9BD58AE21649673300395C02 /* FightViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9BD958C516030FB100782FC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BD958DA16030FB100782FC6 /* main.m in Sources */,
+				9BD958DE16030FB100782FC6 /* AppDelegate.m in Sources */,
+				9BD958E116030FB100782FC6 /* ViewController.m in Sources */,
+				9BD958F016031A1200782FC6 /* DrawingUIView.m in Sources */,
+				9BD58AE11649673300395C02 /* FightViewController.m in Sources */,
+				9B2AD877164A89D5000731E2 /* TargetDummy.m in Sources */,
+				9B2AD87C164AAC61000731E2 /* RuneDrawingUIView.m in Sources */,
+				9BFD7E33164D52CA003BDD38 /* SQLiteManager.m in Sources */,
+				9BFD7E42164D5936003BDD38 /* RunesDAO.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9BD958D616030FB100782FC6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BD958D716030FB100782FC6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9BD958E216030FB100782FC6 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BD958E316030FB100782FC6 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9BD958E516030FB100782FC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9BD958E616030FB100782FC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9BD958E816030FB100782FC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WoWStreet/WoWStreet-Prefix.pch";
+				INFOPLIST_FILE = "WoWStreet/WoWStreet-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9BD958E916030FB100782FC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WoWStreet/WoWStreet-Prefix.pch";
+				INFOPLIST_FILE = "WoWStreet/WoWStreet-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BD958C316030FB100782FC6 /* Build configuration list for PBXProject "WoWStreet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BD958E516030FB100782FC6 /* Debug */,
+				9BD958E616030FB100782FC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BD958E716030FB100782FC6 /* Build configuration list for PBXNativeTarget "WoWStreet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BD958E816030FB100782FC6 /* Debug */,
+				9BD958E916030FB100782FC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9BD958C016030FB100782FC6 /* Project object */;
+}
