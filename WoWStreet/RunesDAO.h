@@ -7,10 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Rune.h"
 
 @interface RunesDAO : NSObject
 
 
-+(void)findRuneWithPoints:(NSMutableArray *)points;
+@property (nonatomic, strong) NSMutableArray *allRunesArray;
+
+-(void)getAllRunes;
+-(void)recognizeRune:(NSMutableArray *)runeDrawn;
+
++(RunesDAO *)Get;
+
+
+
 
 @end

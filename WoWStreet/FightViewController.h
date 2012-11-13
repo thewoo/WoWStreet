@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TargetDummy.h"
+#import "RuneDrawingUIView.h"
 
 @interface FightViewController : UIViewController
 
@@ -18,7 +19,7 @@
 @property (nonatomic, strong) IBOutlet UIImageView *thirdRuneImageView;
 
 @property (nonatomic, strong) IBOutlet UIView *drawingView;
-
+@property (nonatomic, strong) RuneDrawingUIView *runeDrawingUIView;
 
 @property (nonatomic, strong) TargetDummy *dummy;
 

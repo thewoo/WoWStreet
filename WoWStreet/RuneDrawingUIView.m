@@ -7,6 +7,7 @@
 //
 
 #import "RuneDrawingUIView.h"
+#import "Points.h"
 
 @implementation RuneDrawingUIView
 
@@ -16,6 +17,9 @@
 @synthesize bezierPath;
 @synthesize drawingPathArray;
 
+
+float quadrantX = -1;
+float quadrantY = -1;
 
 #pragma mark Touchs.
 
@@ -34,6 +38,24 @@
 
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    CGPoint points = [[touches anyObject] locationInView:self];
+    
+    if (quadrantX != floor(points.x / quadrantWidth) || quadrantY != floor(points.y / quadrantHeight)) {
+        
+        quadrantX = floor(points.x / quadrantWidth);
+        quadrantY = floor(points.y / quadrantHeight);
+        
+        //Cúrrate un init, anda!
+        Points *point = [[Points alloc] init];
+        point.x = quadrantX;
+        point.y = quadrantY;
+        
+        [self.runeDrawn addObject:point];
+        
+        NSLog(@"%f, %f", quadrantX, quadrantY);
+    }
+    
     
     UITouch *drawingTouch = [[touches allObjects] objectAtIndex:0];
     
@@ -97,7 +119,7 @@
         
         self.bezierPath = [[UIBezierPath alloc] init];
         self.drawingPathArray = [[NSMutableArray alloc] init];
-        
+        self.runeDrawn = [[NSMutableArray alloc] init];
         
         [self setBackgroundColor:[UIColor grayColor]];
         

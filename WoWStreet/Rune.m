@@ -1,0 +1,43 @@
+//
+//  Rune.m
+//  WoWStreet
+//
+//  Created by Jorge Pardo on 12/11/12.
+//  Copyright (c) 2012 Magic Dealers. All rights reserved.
+//
+
+#import "Rune.h"
+#import "Points.h"
+
+@implementation Rune
+
+@synthesize runeId;
+@synthesize runePoints;
+
+#pragma mark Actions.
+
+-(void)printAllRunePoints {
+    
+    for (Points *p in runePoints) {
+        
+        NSLog(@"x: %f", p.x);
+        NSLog(@"y: %f", p.y);
+    }
+}
+
+#pragma mark NSOBject's.
+
+- (id)init {
+    
+    self = [super init];
+    
+    if (self) {
+        self.runePoints = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
+
+
+@end

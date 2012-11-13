@@ -17,9 +17,18 @@ sqlite3 *connection = nil;
     
     NSString *dataBasePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Magic.db"];
     
-    if (sqlite3_open([dataBasePath UTF8String], &connection) != SQLITE_OK) {
-        NSLog(@"[SQLiteManager : openConnection] - Failed to connect to the DataBase.");
+    if ([[NSFileManager defaultManager] fileExistsAtPath:dataBasePath]) {
+        
+        if (sqlite3_open([dataBasePath UTF8String], &connection) != SQLITE_OK) {
+            NSLog(@"[SQLiteManager : openConnection] - Failed to connect to the DataBase.");
+        }
+        
+    } else {
+        
+        NSLog(@"[SQLiteManager : openConnection] - Magic.db won't be found under: %@", dataBasePath);
     }
+    
+    
 }
 
 +(void)closeConnection {

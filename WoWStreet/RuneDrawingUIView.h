@@ -16,4 +16,6 @@
 @property (nonatomic, strong) UIBezierPath *bezierPath;
 @property (nonatomic, strong) NSMutableArray *drawingPathArray;
 
+@property (nonatomic, strong) NSMutableArray *runeDrawn;
+
 @end

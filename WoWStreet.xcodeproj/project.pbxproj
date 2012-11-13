@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		9B2AD877164A89D5000731E2 /* TargetDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AD876164A89D5000731E2 /* TargetDummy.m */; };
 		9B2AD87C164AAC61000731E2 /* RuneDrawingUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AD87B164AAC61000731E2 /* RuneDrawingUIView.m */; };
+		9B60FFFB16511E9C00497FD5 /* Rune.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B60FFFA16511E9C00497FD5 /* Rune.m */; };
 		9B7C7217161EF2F60007B808 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C7216161EF2F60007B808 /* Default-568h@2x.png */; };
+		9B8C012A16514066004FA373 /* Points.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C012916514066004FA373 /* Points.m */; };
+		9B8C012D16514293004FA373 /* Magic.db in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C012C16514293004FA373 /* Magic.db */; };
 		9BD58AE11649673300395C02 /* FightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD58ADF1649673300395C02 /* FightViewController.m */; };
 		9BD58AE21649673300395C02 /* FightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BD58AE01649673300395C02 /* FightViewController.xib */; };
 		9BD958CE16030FB100782FC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD958CD16030FB100782FC6 /* UIKit.framework */; };
@@ -31,7 +34,12 @@
 		9B2AD876164A89D5000731E2 /* TargetDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetDummy.m; sourceTree = "<group>"; };
 		9B2AD87A164AAC61000731E2 /* RuneDrawingUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuneDrawingUIView.h; sourceTree = "<group>"; };
 		9B2AD87B164AAC61000731E2 /* RuneDrawingUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuneDrawingUIView.m; sourceTree = "<group>"; };
+		9B60FFF916511E9C00497FD5 /* Rune.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rune.h; sourceTree = "<group>"; };
+		9B60FFFA16511E9C00497FD5 /* Rune.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rune.m; sourceTree = "<group>"; };
 		9B7C7216161EF2F60007B808 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		9B8C012816514066004FA373 /* Points.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Points.h; sourceTree = "<group>"; };
+		9B8C012916514066004FA373 /* Points.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Points.m; sourceTree = "<group>"; };
+		9B8C012C16514293004FA373 /* Magic.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Magic.db; sourceTree = "<group>"; };
 		9BD58ADE1649673300395C02 /* FightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FightViewController.h; sourceTree = "<group>"; };
 		9BD58ADF1649673300395C02 /* FightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FightViewController.m; sourceTree = "<group>"; };
 		9BD58AE01649673300395C02 /* FightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FightViewController.xib; sourceTree = "<group>"; };
@@ -77,8 +85,10 @@
 			children = (
 				9B2AD875164A89D5000731E2 /* TargetDummy.h */,
 				9B2AD876164A89D5000731E2 /* TargetDummy.m */,
-				9B2AD87A164AAC61000731E2 /* RuneDrawingUIView.h */,
-				9B2AD87B164AAC61000731E2 /* RuneDrawingUIView.m */,
+				9B60FFF916511E9C00497FD5 /* Rune.h */,
+				9B60FFFA16511E9C00497FD5 /* Rune.m */,
+				9B8C012816514066004FA373 /* Points.h */,
+				9B8C012916514066004FA373 /* Points.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -93,6 +103,15 @@
 				9BD958EF16031A1200782FC6 /* DrawingUIView.m */,
 			);
 			name = Legacy;
+			sourceTree = "<group>";
+		};
+		9B8C012E16514C3A004FA373 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				9B2AD87A164AAC61000731E2 /* RuneDrawingUIView.h */,
+				9B2AD87B164AAC61000731E2 /* RuneDrawingUIView.m */,
+			);
+			name = Drawing;
 			sourceTree = "<group>";
 		};
 		9BD958BE16030FB100782FC6 = {
@@ -128,6 +147,7 @@
 			children = (
 				9BFD7E2F164D52B4003BDD38 /* SQLite */,
 				9B29A9BB16037526006E85EE /* Objects */,
+				9B8C012E16514C3A004FA373 /* Drawing */,
 				9BD958DC16030FB100782FC6 /* AppDelegate.h */,
 				9BD958DD16030FB100782FC6 /* AppDelegate.m */,
 				9BD58ADE1649673300395C02 /* FightViewController.h */,
@@ -143,6 +163,7 @@
 		9BD958D416030FB100782FC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9B8C012C16514293004FA373 /* Magic.db */,
 				9BD958D516030FB100782FC6 /* WoWStreet-Info.plist */,
 				9BD958D616030FB100782FC6 /* InfoPlist.strings */,
 				9BD958D916030FB100782FC6 /* main.m */,
@@ -217,6 +238,7 @@
 				9BD958E416030FB100782FC6 /* ViewController.xib in Resources */,
 				9B7C7217161EF2F60007B808 /* Default-568h@2x.png in Resources */,
 				9BD58AE21649673300395C02 /* FightViewController.xib in Resources */,
+				9B8C012D16514293004FA373 /* Magic.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +258,8 @@
 				9B2AD87C164AAC61000731E2 /* RuneDrawingUIView.m in Sources */,
 				9BFD7E33164D52CA003BDD38 /* SQLiteManager.m in Sources */,
 				9BFD7E42164D5936003BDD38 /* RunesDAO.m in Sources */,
+				9B60FFFB16511E9C00497FD5 /* Rune.m in Sources */,
+				9B8C012A16514066004FA373 /* Points.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

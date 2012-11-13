@@ -9,6 +9,7 @@
 #import "FightViewController.h"
 #import "TargetDummy.h"
 #import "RuneDrawingUIView.h"
+#import "RunesDAO.h"
 
 @interface FightViewController ()
 
@@ -19,6 +20,7 @@
 @synthesize healthBar;
 @synthesize dummy;
 @synthesize drawingView;
+@synthesize runeDrawingUIView;
 
 #pragma mark Actions.
 
@@ -30,8 +32,17 @@
 
 -(void)castSpell:(UITapGestureRecognizer *)tap {
     
-    self.dummy.health -= 500;
-    [self updateHealhtBar];
+    NSLog(@"RuneDrawn: %@", self.runeDrawingUIView.runeDrawn);
+    
+    [[RunesDAO Get] recognizeRune:runeDrawingUIView.runeDrawn];
+    
+    
+    [self.runeDrawingUIView.runeDrawn removeAllObjects];
+    [self.runeDrawingUIView.drawingPathArray removeAllObjects];
+    [self.runeDrawingUIView setNeedsDisplay];
+    
+//    self.dummy.health -= 500;
+//    [self updateHealhtBar];
 }
 
 
@@ -40,29 +51,19 @@
 
 - (void)viewDidLoad {
     
-    [super viewDidLoad];
+    [super viewDidLoad];   
     
-    NSString *points = @"";
-    
-    for (int x=0; x<=5; x++) {
-        
-        for (int y=0; y<=5; y++) {
-            
-            points = [NSString stringWithFormat:@"%@\nInsert into Points values (NULL, %d, %d);", points, x, y];
-        }
-    }
-    
-    NSLog(@"%@", points);
-    
-    
+    [[RunesDAO Get] getAllRunes];
     
     
     dummy = [[TargetDummy alloc] init];
     
     [self updateHealhtBar];
     
-    [self.drawingView addSubview:[[RuneDrawingUIView alloc] initWithFrame:CGRectMake(0, 0, drawingView.frame.size.width, drawingView.frame.size.height)]];
     
+    
+    self.runeDrawingUIView = [[RuneDrawingUIView alloc] initWithFrame:CGRectMake(0, 0, drawingView.frame.size.width, drawingView.frame.size.height)];    
+    [self.drawingView addSubview:runeDrawingUIView];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(castSpell:)];
     [self.drawingView addGestureRecognizer:tap];
