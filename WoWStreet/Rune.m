@@ -11,7 +11,8 @@
 
 @implementation Rune
 
-@synthesize runeId;
+@synthesize Id;
+@synthesize name;
 @synthesize runePoints;
 
 #pragma mark Actions.
@@ -30,11 +31,9 @@
 - (id)init {
     
     self = [super init];
-    
     if (self) {
         self.runePoints = [[NSMutableArray alloc] init];
-    }
-    
+    }    
     return self;
 }
 

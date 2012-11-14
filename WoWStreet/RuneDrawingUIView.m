@@ -17,9 +17,24 @@
 @synthesize bezierPath;
 @synthesize drawingPathArray;
 
-
 float quadrantX = -1;
 float quadrantY = -1;
+
+#pragma mark Actions.
+
+-(void)reset {
+    
+    [self.drawingPathArray removeAllObjects];
+    [self.runeDrawn removeAllObjects];
+    
+    quadrantX = -1;
+    quadrantY = -1;
+    
+    [self setNeedsDisplay];
+    
+    
+}
+
 
 #pragma mark Touchs.
 

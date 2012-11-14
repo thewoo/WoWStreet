@@ -10,7 +10,8 @@
 
 @interface Rune : NSObject
 
-@property (nonatomic, strong) NSNumber *runeId;
+@property (nonatomic, strong) NSNumber *Id;
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSMutableArray *runePoints;
 
 -(void)printAllRunePoints;

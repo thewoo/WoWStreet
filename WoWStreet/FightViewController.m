@@ -10,6 +10,7 @@
 #import "TargetDummy.h"
 #import "RuneDrawingUIView.h"
 #import "RunesDAO.h"
+#import "Rune.h"
 
 @interface FightViewController ()
 
@@ -34,12 +35,13 @@
     
     NSLog(@"RuneDrawn: %@", self.runeDrawingUIView.runeDrawn);
     
-    [[RunesDAO Get] recognizeRune:runeDrawingUIView.runeDrawn];
+    Rune *rune = [[RunesDAO Get] recognizeRune:runeDrawingUIView.runeDrawn];
     
+    if (rune) {
+        
+    }
     
-    [self.runeDrawingUIView.runeDrawn removeAllObjects];
-    [self.runeDrawingUIView.drawingPathArray removeAllObjects];
-    [self.runeDrawingUIView setNeedsDisplay];
+    [self.runeDrawingUIView reset];
     
 //    self.dummy.health -= 500;
 //    [self updateHealhtBar];

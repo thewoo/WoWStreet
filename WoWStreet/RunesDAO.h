@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSMutableArray *allRunesArray;
 
 -(void)getAllRunes;
--(void)recognizeRune:(NSMutableArray *)runeDrawn;
+-(Rune *)recognizeRune:(NSMutableArray *)runeDrawn;
 
 +(RunesDAO *)Get;
 

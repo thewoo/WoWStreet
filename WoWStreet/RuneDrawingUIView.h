@@ -18,4 +18,6 @@
 
 @property (nonatomic, strong) NSMutableArray *runeDrawn;
 
+-(void)reset;
+
 @end

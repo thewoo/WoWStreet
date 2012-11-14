@@ -23,4 +23,6 @@
 
 @property (nonatomic, strong) TargetDummy *dummy;
 
+@property (nonatomic, strong) NSMutableArray *spellBuilder;
+
 @end

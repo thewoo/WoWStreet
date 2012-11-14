@@ -24,6 +24,10 @@
 		9BD958E116030FB100782FC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD958E016030FB100782FC6 /* ViewController.m */; };
 		9BD958E416030FB100782FC6 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BD958E216030FB100782FC6 /* ViewController.xib */; };
 		9BD958F016031A1200782FC6 /* DrawingUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD958EF16031A1200782FC6 /* DrawingUIView.m */; };
+		9BE833491653B54900F50E13 /* SpellsDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE833481653B54900F50E13 /* SpellsDAO.m */; };
+		9BE8334D1653B5FC00F50E13 /* Spell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8334C1653B5FC00F50E13 /* Spell.m */; };
+		9BE833561653C3A100F50E13 /* BlueSquare.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE833551653C3A100F50E13 /* BlueSquare.png */; };
+		9BE833581653C43400F50E13 /* BlueGraySquare.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE833571653C43400F50E13 /* BlueGraySquare.png */; };
 		9BFD7E33164D52CA003BDD38 /* SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7E32164D52CA003BDD38 /* SQLiteManager.m */; };
 		9BFD7E42164D5936003BDD38 /* RunesDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7E41164D5936003BDD38 /* RunesDAO.m */; };
 		9BFD7E48164D5B74003BDD38 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFD7E47164D5B74003BDD38 /* libsqlite3.0.dylib */; };
@@ -58,6 +62,12 @@
 		9BD958E316030FB100782FC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		9BD958EE16031A1200782FC6 /* DrawingUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingUIView.h; sourceTree = "<group>"; };
 		9BD958EF16031A1200782FC6 /* DrawingUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingUIView.m; sourceTree = "<group>"; };
+		9BE833471653B54900F50E13 /* SpellsDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpellsDAO.h; sourceTree = "<group>"; };
+		9BE833481653B54900F50E13 /* SpellsDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpellsDAO.m; sourceTree = "<group>"; };
+		9BE8334B1653B5FB00F50E13 /* Spell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spell.h; sourceTree = "<group>"; };
+		9BE8334C1653B5FC00F50E13 /* Spell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spell.m; sourceTree = "<group>"; };
+		9BE833551653C3A100F50E13 /* BlueSquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueSquare.png; sourceTree = "<group>"; };
+		9BE833571653C43400F50E13 /* BlueGraySquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueGraySquare.png; sourceTree = "<group>"; };
 		9BFD7E31164D52CA003BDD38 /* SQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteManager.h; sourceTree = "<group>"; };
 		9BFD7E32164D52CA003BDD38 /* SQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteManager.m; sourceTree = "<group>"; };
 		9BFD7E40164D5936003BDD38 /* RunesDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunesDAO.h; sourceTree = "<group>"; };
@@ -85,6 +95,8 @@
 			children = (
 				9B2AD875164A89D5000731E2 /* TargetDummy.h */,
 				9B2AD876164A89D5000731E2 /* TargetDummy.m */,
+				9BE8334B1653B5FB00F50E13 /* Spell.h */,
+				9BE8334C1653B5FC00F50E13 /* Spell.m */,
 				9B60FFF916511E9C00497FD5 /* Rune.h */,
 				9B60FFFA16511E9C00497FD5 /* Rune.m */,
 				9B8C012816514066004FA373 /* Points.h */,
@@ -154,6 +166,7 @@
 				9BD58ADF1649673300395C02 /* FightViewController.m */,
 				9BD58AE01649673300395C02 /* FightViewController.xib */,
 				9B7C7216161EF2F60007B808 /* Default-568h@2x.png */,
+				9BE8334E1653C01E00F50E13 /* Images */,
 				9B2AD879164AA6BA000731E2 /* Legacy */,
 				9BD958D416030FB100782FC6 /* Supporting Files */,
 			);
@@ -172,6 +185,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9BE8334E1653C01E00F50E13 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9BE833571653C43400F50E13 /* BlueGraySquare.png */,
+				9BE833551653C3A100F50E13 /* BlueSquare.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		9BFD7E2F164D52B4003BDD38 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +201,8 @@
 				9BFD7E32164D52CA003BDD38 /* SQLiteManager.m */,
 				9BFD7E40164D5936003BDD38 /* RunesDAO.h */,
 				9BFD7E41164D5936003BDD38 /* RunesDAO.m */,
+				9BE833471653B54900F50E13 /* SpellsDAO.h */,
+				9BE833481653B54900F50E13 /* SpellsDAO.m */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -239,6 +263,8 @@
 				9B7C7217161EF2F60007B808 /* Default-568h@2x.png in Resources */,
 				9BD58AE21649673300395C02 /* FightViewController.xib in Resources */,
 				9B8C012D16514293004FA373 /* Magic.db in Resources */,
+				9BE833561653C3A100F50E13 /* BlueSquare.png in Resources */,
+				9BE833581653C43400F50E13 /* BlueGraySquare.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +286,8 @@
 				9BFD7E42164D5936003BDD38 /* RunesDAO.m in Sources */,
 				9B60FFFB16511E9C00497FD5 /* Rune.m in Sources */,
 				9B8C012A16514066004FA373 /* Points.m in Sources */,
+				9BE833491653B54900F50E13 /* SpellsDAO.m in Sources */,
+				9BE8334D1653B5FC00F50E13 /* Spell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

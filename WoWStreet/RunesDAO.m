@@ -18,59 +18,59 @@ static RunesDAO *instance = nil;
 @synthesize allRunesArray;
 
 
+#pragma mark Actions.
+
 -(void)getAllRunes {
-    
-    self.allRunesArray = [[NSMutableArray alloc] init];
-    
-    char *lastRuneIdSQL = "Select max(runeId) from RunePoints";
+        
+    char *lastRuneIdSQL = "Select distinct runeID from RunePoints";
     sqlite3_stmt *sqlStatement;
     
-    int lastRuneId = 0;
+    NSMutableArray *runesIDs = [[NSMutableArray alloc] init];
     
     if (sqlite3_prepare_v2([SQLiteManager getConnection], lastRuneIdSQL, -1, &sqlStatement, NULL) == SQLITE_OK) {
                
         while (sqlite3_step(sqlStatement) == SQLITE_ROW) {            
-            lastRuneId = sqlite3_column_int(sqlStatement, 0);
-//            NSLog(@"LastRuneID: %d", lastRuneId);
+            [runesIDs addObject:[NSNumber numberWithInt:(sqlite3_column_int(sqlStatement, 0))]];
         }
-    
-    } else {
         
+        
+        for (int x=0; x < [runesIDs count]; x++) {
+            
+            Rune *rune = [[Rune alloc] init];
+            
+            const char *getAllRunesSQL = [[NSString stringWithFormat:@"Select Points.x, Points.y, Runes.name from Points, RunePoints, Runes where Points.pointsId = RunePoints.pointsID and Runes.runeId = RunePoints.runeID and RunePoints.runeId = %@ order by RunePoints.position", [runesIDs objectAtIndex:x]] UTF8String];
+            
+            if (sqlite3_prepare_v2([SQLiteManager getConnection], getAllRunesSQL, -1, &sqlStatement, NULL) == SQLITE_OK) {
+                
+                rune.Id = [runesIDs objectAtIndex:x];
+                
+                while (sqlite3_step(sqlStatement) == SQLITE_ROW) {
+                    
+                    Points *point = [[Points alloc] init];
+                    point.x = (float)sqlite3_column_int(sqlStatement, 0);
+                    point.y = (float)sqlite3_column_int(sqlStatement, 1);
+                    
+                    if (rune.name == nil) rune.name = [NSString stringWithUTF8String:(const char *) sqlite3_column_text(sqlStatement, 2)];
+                    
+                    [rune.runePoints addObject:point];
+                }
+                
+                [self.allRunesArray addObject:rune];
+                
+            } else {                
+                NSLog(@"[RunesDAO : getAllRunes / getAllRunesSQL] - Error: %s", sqlite3_errmsg([SQLiteManager getConnection]));
+            }
+        }
+        
+        
+    } else {
         NSLog(@"[RunesDAO : getAllRunes / lastRuneIdSQL] - Error: %s", sqlite3_errmsg([SQLiteManager getConnection]));
     }
-    
-    
-    for (int x=1; x <= lastRuneId; x++) {
-        
-        Rune *rune = [[Rune alloc] init];
-        
-        const char *getAllRunesSQL = [[NSString stringWithFormat:@"Select Points.x, Points.y from Points, RunePoints where Points.pointsId = RunePoints.pointsID and RunePoints.runeId = %d order by RunePoints.position", x] UTF8String];
-        
-        if (sqlite3_prepare_v2([SQLiteManager getConnection], getAllRunesSQL, -1, &sqlStatement, NULL) == SQLITE_OK) {
-            
-            rune.runeId = [NSNumber numberWithInt:x];
-            
-            while (sqlite3_step(sqlStatement) == SQLITE_ROW) {
-                
-                Points *point = [[Points alloc] init];
-                point.x = (float)sqlite3_column_int(sqlStatement, 0);
-                point.y = (float)sqlite3_column_int(sqlStatement, 1);
-                
-                [rune.runePoints addObject:point];
-            }
-            
-            [self.allRunesArray addObject:rune];
-            
-        } else {
-            
-            NSLog(@"[RunesDAO : getAllRunes / getAllRunesSQL] - Error: %s", sqlite3_errmsg([SQLiteManager getConnection]));
-        }
-    }    
-    
 }
 
 
--(void)recognizeRune:(NSMutableArray *)runeDrawn {
+
+-(Rune *)recognizeRune:(NSMutableArray *)runeDrawn {
     
     Rune *rune;
     BOOL foundRune = NO;
@@ -83,16 +83,26 @@ static RunesDAO *instance = nil;
             
             for (int y=0; y < [rune.runePoints count]; y++) {
                 foundRune = [Points comparePoint:[rune.runePoints objectAtIndex:y] andPoint:[runeDrawn objectAtIndex:y]];
+                if (!foundRune) break;
             }
         }
         
         if (foundRune) break;
     }
     
-    if (foundRune) NSLog(@"Drawn Rune with ID: %@", rune.runeId);
+    
+    if (foundRune) {
+        NSLog(@"You drew the '%@' Rune, with ID: %@", rune.name, rune.Id);
+        return rune;
+        
+    } else {
+        return NULL;
+    }
 }
 
 
+
+#pragma mark Singleton's.
 
 +(RunesDAO *)Get {
     
@@ -101,6 +111,20 @@ static RunesDAO *instance = nil;
     }
     
     return instance;
+}
+
+
+#pragma mark Object's.
+
+- (id)init {
+    
+    self = [super init];
+    
+    if (self) {
+        self.allRunesArray = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
 }
 
 
