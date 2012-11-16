@@ -68,7 +68,7 @@ float quadrantY = -1;
         
         [self.runeDrawn addObject:point];
         
-        NSLog(@"%f, %f", quadrantX, quadrantY);
+//        NSLog(@"%f, %f", quadrantX, quadrantY);
     }
     
     

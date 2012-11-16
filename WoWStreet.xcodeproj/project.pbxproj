@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9B2AD877164A89D5000731E2 /* TargetDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AD876164A89D5000731E2 /* TargetDummy.m */; };
 		9B2AD87C164AAC61000731E2 /* RuneDrawingUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AD87B164AAC61000731E2 /* RuneDrawingUIView.m */; };
+		9B5761F316568F0D00D8BB48 /* W.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B5761F216568F0D00D8BB48 /* W.png */; };
 		9B60FFFB16511E9C00497FD5 /* Rune.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B60FFFA16511E9C00497FD5 /* Rune.m */; };
 		9B7C7217161EF2F60007B808 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C7216161EF2F60007B808 /* Default-568h@2x.png */; };
 		9B8C012A16514066004FA373 /* Points.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C012916514066004FA373 /* Points.m */; };
@@ -38,6 +39,7 @@
 		9B2AD876164A89D5000731E2 /* TargetDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetDummy.m; sourceTree = "<group>"; };
 		9B2AD87A164AAC61000731E2 /* RuneDrawingUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuneDrawingUIView.h; sourceTree = "<group>"; };
 		9B2AD87B164AAC61000731E2 /* RuneDrawingUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuneDrawingUIView.m; sourceTree = "<group>"; };
+		9B5761F216568F0D00D8BB48 /* W.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = W.png; path = ../W.png; sourceTree = "<group>"; };
 		9B60FFF916511E9C00497FD5 /* Rune.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rune.h; sourceTree = "<group>"; };
 		9B60FFFA16511E9C00497FD5 /* Rune.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rune.m; sourceTree = "<group>"; };
 		9B7C7216161EF2F60007B808 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		9BE8334E1653C01E00F50E13 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9B5761F216568F0D00D8BB48 /* W.png */,
 				9BE833571653C43400F50E13 /* BlueGraySquare.png */,
 				9BE833551653C3A100F50E13 /* BlueSquare.png */,
 			);
@@ -265,6 +268,7 @@
 				9B8C012D16514293004FA373 /* Magic.db in Resources */,
 				9BE833561653C3A100F50E13 /* BlueSquare.png in Resources */,
 				9BE833581653C43400F50E13 /* BlueGraySquare.png in Resources */,
+				9B5761F316568F0D00D8BB48 /* W.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

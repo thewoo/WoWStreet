@@ -35,7 +35,7 @@ static SpellsDAO *instance = nil;
         }
         
         
-        for (int x=1; x<= [spellsIDS count]; x++) {
+        for (int x=0; x< [spellsIDS count]; x++) {
             
             Spell *spell = [[Spell alloc] init];
             
@@ -72,13 +72,32 @@ static SpellsDAO *instance = nil;
 
 -(Spell *)findSpellWithRunes:(NSMutableArray *)runesArray {
     
-    Spell *spell = [[Spell alloc] init];
+    Spell *spell;
+    BOOL foundSpell = NO;
     
+    for (int x=0; x < [allSpells count]; x++) {
+        
+        spell = [allSpells objectAtIndex:x];
+        
+        if ([spell.spellsRunes count] == [runesArray count]) {
+            
+            if ([Rune compareRunesIDsFromRunes:spell.spellsRunes andRunes:runesArray]) {
+                foundSpell = YES;
+                break;
+            }
+        }
+        
+        if (foundSpell) break;
+    }
     
+    if (foundSpell) {
+//        NSLog(@"The Spell you've done is: %@", spell.name);
+        return spell;
+        
+    } else {
+        return NULL;
+    }
     
-    
-    
-    return spell;
 }
 
 

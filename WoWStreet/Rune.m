@@ -26,6 +26,24 @@
     }
 }
 
++(BOOL)compareRunesIDsFromRunes:(NSMutableArray *)a andRunes:(NSMutableArray *)b {
+    
+    BOOL success = YES;
+    
+    for (int x=0; x < [a count]; x++) {
+        
+        if ([a objectAtIndex:x] != [b objectAtIndex:x]) {
+            success = NO;
+            break;
+        }
+    }
+    
+    return success;   
+}
+
+
+
+
 #pragma mark NSOBject's.
 
 - (id)init {

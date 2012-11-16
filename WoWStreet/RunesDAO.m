@@ -92,7 +92,7 @@ static RunesDAO *instance = nil;
     
     
     if (foundRune) {
-        NSLog(@"You drew the '%@' Rune, with ID: %@", rune.name, rune.Id);
+//        NSLog(@"You drew the '%@' Rune, with ID: %@", rune.name, rune.Id);
         return rune;
         
     } else {

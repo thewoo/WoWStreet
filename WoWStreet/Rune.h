@@ -16,4 +16,6 @@
 
 -(void)printAllRunePoints;
 
++(BOOL)compareRunesIDsFromRunes:(NSMutableArray *)a andRunes:(NSMutableArray *)b;
+
 @end
