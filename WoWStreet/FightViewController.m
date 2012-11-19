@@ -40,8 +40,18 @@
 #pragma mark Actions.
 
 -(void)updateHealhtBar {
+
+    if (dummy.health <= 0) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Victoria!" message:@"Has derrotado a un muñeco, enhorabuena!" delegate:self cancelButtonTitle:@"Yay!" otherButtonTitles:nil, nil];
+        
+        [alert show];
+        
+        self.dummy = [[TargetDummy alloc] init];
+    }
     
     [self.healthBar setProgress:((dummy.health * 100)/dummy.maxHealth)/100 animated:YES];
+    
 }
 
 
@@ -65,7 +75,6 @@
 -(void)buildSpell {
     
     if ([spellBuilder count] == 3) {
-        
         
         NSMutableArray *spellRunesIDsArray = [[NSMutableArray alloc] init];
         
@@ -92,7 +101,7 @@
                     [self.spellView setAlpha:0];
                     
                 } completion:^(BOOL finished) {
-                    NSLog(@"Spell Casted Shown.");
+//                    NSLog(@"Spell Casted Shown.");
                 }];
                 
             }];
