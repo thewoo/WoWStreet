@@ -11,17 +11,14 @@
 #import "Spell.h"
 #import "Rune.h"
 
-
-static SpellsDAO *instance = nil;
-
 @implementation SpellsDAO
-
-@synthesize allSpells;
 
 
 #pragma mark Actions.
 
--(void)getAllSpells {
++(NSMutableArray *)getAllSpells {
+    
+    NSMutableArray *allSpells = [[NSMutableArray alloc] init];
     
     char *allSpellsIdsSQL = "Select distinct spellID from RuneSpells";
     sqlite3_stmt *sqlStatement;
@@ -54,7 +51,7 @@ static SpellsDAO *instance = nil;
                     [spell.spellsRunes addObject:[NSNumber numberWithInt:sqlite3_column_int(sqlStatement, 3)]];
                 }
                 
-                [self.allSpells addObject:spell];
+                [allSpells addObject:spell];
             
             } else {
                 NSLog(@"[SpellsDAO : getAllSpells] - Error: %s", sqlite3_errmsg([SQLiteManager getConnection]));
@@ -65,68 +62,7 @@ static SpellsDAO *instance = nil;
         NSLog(@"[SpellsDAO : getAllSpells(allSpellsIDS)] - Error: %s", sqlite3_errmsg([SQLiteManager getConnection]));
     }
   
+    return allSpells;
 }
-
-
-
-
--(Spell *)findSpellWithRunes:(NSMutableArray *)runesArray {
-    
-    Spell *spell;
-    BOOL foundSpell = NO;
-    
-    for (int x=0; x < [allSpells count]; x++) {
-        
-        spell = [allSpells objectAtIndex:x];
-        
-        if ([spell.spellsRunes count] == [runesArray count]) {
-            
-            if ([Rune compareRunesIDsFromRunes:spell.spellsRunes andRunes:runesArray]) {
-                foundSpell = YES;
-                break;
-            }
-        }
-        
-        if (foundSpell) break;
-    }
-    
-    if (foundSpell) {
-//        NSLog(@"The Spell you've done is: %@", spell.name);
-        return spell;
-        
-    } else {
-        return NULL;
-    }
-    
-}
-
-
-
-#pragma mark Singleton's.
-
-+(SpellsDAO *)Get {
-    
-    if (!instance) {
-        instance = [[SpellsDAO alloc] init];
-    }
-    
-    return instance;
-}
-
-
-
-#pragma mark Object's.
-
-- (id)init {
-    
-    self = [super init];
-    
-    if (self) {
-        self.allSpells = [[NSMutableArray alloc] init];
-    }
-    
-    return self;
-}
-
 
 @end

@@ -12,6 +12,7 @@
 #import "RunesDAO.h"
 #import "Rune.h"
 #import "SpellsDAO.h"
+#import "Magic.h"
 
 @interface FightViewController ()
 
@@ -57,7 +58,7 @@
 
 -(void)castSpell:(UITapGestureRecognizer *)tap {
     
-    Rune *rune = [[RunesDAO Get] recognizeRune:runeDrawingUIView.runeDrawn];
+    Rune *rune = [[Magic Get] recognizeRune:runeDrawingUIView.runeDrawn];
     
     if (rune) {        
         [self.spellBuilder addObject:rune];
@@ -83,7 +84,7 @@
         }
         
         
-        self.spell = [[SpellsDAO Get] findSpellWithRunes:spellRunesIDsArray];
+        self.spell = [[Magic Get] findSpellWithRunes:spellRunesIDsArray];
         
         if (spell) {
             
@@ -180,8 +181,8 @@
     
     [super viewDidLoad];   
     
-    [[RunesDAO Get] getAllRunes];
-    [[SpellsDAO Get] getAllSpells];
+    [[Magic Get] getAllRunes];
+    [[Magic Get] getAllSpells];
     
     self.dummy = [[TargetDummy alloc] init];
     self.spellBuilder = [[NSMutableArray alloc] init];

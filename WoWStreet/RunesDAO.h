@@ -11,15 +11,7 @@
 
 @interface RunesDAO : NSObject
 
-
-@property (nonatomic, strong) NSMutableArray *allRunesArray;
-
--(void)getAllRunes;
--(Rune *)recognizeRune:(NSMutableArray *)runeDrawn;
-
-+(RunesDAO *)Get;
-
-
++(NSMutableArray *)getAllRunes;
 
 
 @end

@@ -14,6 +14,9 @@
 		9B7C7217161EF2F60007B808 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C7216161EF2F60007B808 /* Default-568h@2x.png */; };
 		9B8C012A16514066004FA373 /* Points.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C012916514066004FA373 /* Points.m */; };
 		9B8C012D16514293004FA373 /* Magic.db in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C012C16514293004FA373 /* Magic.db */; };
+		9BBAE173165B78A200947091 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBAE172165B78A200947091 /* Player.m */; };
+		9BBAE17B165B876900947091 /* Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBAE17A165B876900947091 /* Magic.m */; };
+		9BBAE17E165BA38900947091 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBAE17D165BA38900947091 /* Enemy.m */; };
 		9BD58AE11649673300395C02 /* FightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD58ADF1649673300395C02 /* FightViewController.m */; };
 		9BD58AE21649673300395C02 /* FightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BD58AE01649673300395C02 /* FightViewController.xib */; };
 		9BD958CE16030FB100782FC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD958CD16030FB100782FC6 /* UIKit.framework */; };
@@ -46,6 +49,12 @@
 		9B8C012816514066004FA373 /* Points.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Points.h; sourceTree = "<group>"; };
 		9B8C012916514066004FA373 /* Points.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Points.m; sourceTree = "<group>"; };
 		9B8C012C16514293004FA373 /* Magic.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Magic.db; sourceTree = "<group>"; };
+		9BBAE171165B78A200947091 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		9BBAE172165B78A200947091 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		9BBAE179165B876900947091 /* Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magic.h; sourceTree = "<group>"; };
+		9BBAE17A165B876900947091 /* Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Magic.m; sourceTree = "<group>"; };
+		9BBAE17C165BA38900947091 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		9BBAE17D165BA38900947091 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
 		9BD58ADE1649673300395C02 /* FightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FightViewController.h; sourceTree = "<group>"; };
 		9BD58ADF1649673300395C02 /* FightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FightViewController.m; sourceTree = "<group>"; };
 		9BD58AE01649673300395C02 /* FightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FightViewController.xib; sourceTree = "<group>"; };
@@ -95,14 +104,8 @@
 		9B29A9BB16037526006E85EE /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				9B2AD875164A89D5000731E2 /* TargetDummy.h */,
-				9B2AD876164A89D5000731E2 /* TargetDummy.m */,
-				9BE8334B1653B5FB00F50E13 /* Spell.h */,
-				9BE8334C1653B5FC00F50E13 /* Spell.m */,
-				9B60FFF916511E9C00497FD5 /* Rune.h */,
-				9B60FFFA16511E9C00497FD5 /* Rune.m */,
-				9B8C012816514066004FA373 /* Points.h */,
-				9B8C012916514066004FA373 /* Points.m */,
+				9BBAE17F165BA39A00947091 /* Magic-Related */,
+				9BBAE180165BA3B900947091 /* Game-Related */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -126,6 +129,34 @@
 				9B2AD87B164AAC61000731E2 /* RuneDrawingUIView.m */,
 			);
 			name = Drawing;
+			sourceTree = "<group>";
+		};
+		9BBAE17F165BA39A00947091 /* Magic-Related */ = {
+			isa = PBXGroup;
+			children = (
+				9BBAE179165B876900947091 /* Magic.h */,
+				9BBAE17A165B876900947091 /* Magic.m */,
+				9BE8334B1653B5FB00F50E13 /* Spell.h */,
+				9BE8334C1653B5FC00F50E13 /* Spell.m */,
+				9B60FFF916511E9C00497FD5 /* Rune.h */,
+				9B60FFFA16511E9C00497FD5 /* Rune.m */,
+				9B8C012816514066004FA373 /* Points.h */,
+				9B8C012916514066004FA373 /* Points.m */,
+			);
+			name = "Magic-Related";
+			sourceTree = "<group>";
+		};
+		9BBAE180165BA3B900947091 /* Game-Related */ = {
+			isa = PBXGroup;
+			children = (
+				9BBAE171165B78A200947091 /* Player.h */,
+				9BBAE172165B78A200947091 /* Player.m */,
+				9BBAE17C165BA38900947091 /* Enemy.h */,
+				9BBAE17D165BA38900947091 /* Enemy.m */,
+				9B2AD875164A89D5000731E2 /* TargetDummy.h */,
+				9B2AD876164A89D5000731E2 /* TargetDummy.m */,
+			);
+			name = "Game-Related";
 			sourceTree = "<group>";
 		};
 		9BD958BE16030FB100782FC6 = {
@@ -167,7 +198,6 @@
 				9BD58ADE1649673300395C02 /* FightViewController.h */,
 				9BD58ADF1649673300395C02 /* FightViewController.m */,
 				9BD58AE01649673300395C02 /* FightViewController.xib */,
-				9B7C7216161EF2F60007B808 /* Default-568h@2x.png */,
 				9BE8334E1653C01E00F50E13 /* Images */,
 				9B2AD879164AA6BA000731E2 /* Legacy */,
 				9BD958D416030FB100782FC6 /* Supporting Files */,
@@ -193,6 +223,7 @@
 				9B5761F216568F0D00D8BB48 /* W.png */,
 				9BE833571653C43400F50E13 /* BlueGraySquare.png */,
 				9BE833551653C3A100F50E13 /* BlueSquare.png */,
+				9B7C7216161EF2F60007B808 /* Default-568h@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -292,6 +323,9 @@
 				9B8C012A16514066004FA373 /* Points.m in Sources */,
 				9BE833491653B54900F50E13 /* SpellsDAO.m in Sources */,
 				9BE8334D1653B5FC00F50E13 /* Spell.m in Sources */,
+				9BBAE173165B78A200947091 /* Player.m in Sources */,
+				9BBAE17B165B876900947091 /* Magic.m in Sources */,
+				9BBAE17E165BA38900947091 /* Enemy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
