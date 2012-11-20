@@ -36,7 +36,7 @@
             
             Spell *spell = [[Spell alloc] init];
             
-            const char *getAllSpellsSQL = [[NSString stringWithFormat:@"Select Spells.name, Spells.damage, Spells.description, RuneSpells.runeID from Spells, RuneSpells where RuneSpells.spellId = %@", [spellsIDS objectAtIndex:x]] UTF8String];
+            const char *getAllSpellsSQL = [[NSString stringWithFormat:@"Select Spells.name, Spells.damage, Spells.description, RuneSpells.runeId from Spells, RuneSpells where RuneSpells.spellId = Spells.spellID and RuneSpells.spellID = %@", [spellsIDS objectAtIndex:x]] UTF8String];
             
             if (sqlite3_prepare_v2([SQLiteManager getConnection], getAllSpellsSQL, -1, &sqlStatement, NULL) == SQLITE_OK) {
                 
