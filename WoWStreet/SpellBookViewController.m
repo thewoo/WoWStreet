@@ -19,9 +19,59 @@
 
 @synthesize spellsTableView;
 @synthesize descriptionTextView;
+
 @synthesize firstRuneDisplayerView;
 @synthesize secondRuneDisplayerView;
 @synthesize thirdRuneDisplayerView;
+
+@synthesize modalView;
+@synthesize closeButton;
+@synthesize teachingView;
+@synthesize teachRuneView;
+
+
+#pragma mark IBActions.
+
+-(IBAction)teachFirstRune:(id)sender {
+    
+    NSLog(@"teachFirstRune: %@", self.firstRuneDisplayerView.rune);
+    
+    if (firstRuneDisplayerView.rune != nil) {
+        [self.modalView setHidden:NO];
+        self.teachRuneView.rune = firstRuneDisplayerView.rune;
+        [teachRuneView teach];
+    }
+}
+
+-(IBAction)teachSecondRune:(id)sender {
+    
+    NSLog(@"teachSecondRune: %@", secondRuneDisplayerView.rune);
+    
+    if (secondRuneDisplayerView.rune != nil) {
+        [self.modalView setHidden:NO];
+        self.teachRuneView.rune = secondRuneDisplayerView.rune;
+        [teachRuneView teach];
+    }
+}
+
+-(IBAction)teachThirdRune:(id)sender {
+    
+    NSLog(@"teachThirdRune: %@", thirdRuneDisplayerView.rune);
+    
+    if (thirdRuneDisplayerView.rune != nil) {
+        [self.modalView setHidden:NO];
+        self.teachRuneView.rune = thirdRuneDisplayerView.rune;
+        [teachRuneView teach];        
+    }
+}
+
+
+-(IBAction)closeModalView:(id)sender {
+    
+    [self.modalView setHidden:YES];
+}
+
+
 
 #pragma mark Actions.
 
@@ -72,9 +122,9 @@
     
     Spell *spell = [[[Magic Get] allSpells] objectAtIndex:[indexPath row]];
     
-    self.firstRuneDisplayerView.runeLabel.text = [[Magic Get] findRuneWithID:[spell.spellsRunes objectAtIndex:0]];
-    self.secondRuneDisplayerView.runeLabel.text = [[Magic Get] findRuneWithID:[spell.spellsRunes objectAtIndex:1]];
-    self.thirdRuneDisplayerView.runeLabel.text = [[Magic Get] findRuneWithID:[spell.spellsRunes objectAtIndex:2]];
+    self.firstRuneDisplayerView.rune = [[Magic Get] findRuneWithID:[spell.spellsRunes objectAtIndex:0]];
+    self.secondRuneDisplayerView.rune = [[Magic Get] findRuneWithID:[spell.spellsRunes objectAtIndex:1]];
+    self.thirdRuneDisplayerView.rune = [[Magic Get] findRuneWithID:[spell.spellsRunes objectAtIndex:2]];
     
     self.descriptionTextView.text = spell.description;
     [self.descriptionTextView setHidden:NO];
@@ -90,14 +140,23 @@
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeNavigation:)];
     [self.view addGestureRecognizer:swipe];
     
+    
     self.firstRuneDisplayerView = [[RuneDisplayerUIView alloc] initAtX:10 andY:350];
     [self.view addSubview:firstRuneDisplayerView];
+
+    [self.view bringSubviewToFront:self.firstRuneTeacherButton];
+
     
     self.secondRuneDisplayerView = [[RuneDisplayerUIView alloc] initAtX:112 andY:350];
     [self.view addSubview:secondRuneDisplayerView];
     
     self.thirdRuneDisplayerView = [[RuneDisplayerUIView alloc] initAtX:213 andY:350];
     [self.view addSubview:thirdRuneDisplayerView];
+    
+    [self.view bringSubviewToFront:self.modalView];
+    
+    self.teachRuneView = [[TeachRuneUIView alloc] initWithFrame:CGRectMake(0, 0, teachingView.frame.size.width, teachingView.frame.size.height)];
+    [self.teachingView addSubview:teachRuneView];
     
 }
 

@@ -10,9 +10,14 @@
 
 @implementation RuneDisplayerUIView
 
+//@synthesize rune = _rune;
 @synthesize runeLabel;
 
 #pragma mark UIView's.
+
+//-(void)setRune:(Rune *)rune {
+//    self.runeLabel.text = rune.name;
+//}
 
 -(id)initAtX:(int)x andY:(int)y {
     
@@ -22,14 +27,14 @@
     
     if (self) {
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BlueGraySquare.png"]];
-        
+                
         self.runeLabel = [[UILabel alloc] initWithFrame:CGRectMake(3, 30, 90, 21)];
         [self.runeLabel setTextAlignment:UITextAlignmentCenter];
         [self.runeLabel setAdjustsFontSizeToFitWidth:YES];
         [self.runeLabel setTextColor:[UIColor whiteColor]];
         [self.runeLabel setBackgroundColor:[UIColor clearColor]];
         
-        [self addSubview:runeLabel];
+        [self addSubview:self.runeLabel];
     }
 
     return self;

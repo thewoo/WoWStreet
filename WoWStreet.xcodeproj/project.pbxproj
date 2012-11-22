@@ -10,6 +10,9 @@
 		9B153FE3165D2F71005EBABC /* RuneDisplayerUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B153FE2165D2F71005EBABC /* RuneDisplayerUIView.m */; };
 		9B25EA98165CCF4000BA0470 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B25EA96165CCF4000BA0470 /* MainMenuViewController.m */; };
 		9B25EA99165CCF4000BA0470 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B25EA97165CCF4000BA0470 /* MainMenuViewController.xib */; };
+		9B26D145165E4A3500EF6EC3 /* TeacherUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B26D144165E4A3500EF6EC3 /* TeacherUIView.m */; };
+		9B26D14B165E724300EF6EC3 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B26D14A165E724300EF6EC3 /* close@2x.png */; };
+		9B26D14E165E740E00EF6EC3 /* TeachRuneUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B26D14D165E740E00EF6EC3 /* TeachRuneUIView.m */; };
 		9B2AD877164A89D5000731E2 /* TargetDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AD876164A89D5000731E2 /* TargetDummy.m */; };
 		9B2AD87C164AAC61000731E2 /* RuneDrawingUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AD87B164AAC61000731E2 /* RuneDrawingUIView.m */; };
 		9B5761F316568F0D00D8BB48 /* W.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B5761F216568F0D00D8BB48 /* W.png */; };
@@ -51,6 +54,11 @@
 		9B25EA95165CCF4000BA0470 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		9B25EA96165CCF4000BA0470 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		9B25EA97165CCF4000BA0470 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
+		9B26D143165E4A3500EF6EC3 /* TeacherUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherUIView.h; sourceTree = "<group>"; };
+		9B26D144165E4A3500EF6EC3 /* TeacherUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherUIView.m; sourceTree = "<group>"; };
+		9B26D14A165E724300EF6EC3 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		9B26D14C165E740E00EF6EC3 /* TeachRuneUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeachRuneUIView.h; sourceTree = "<group>"; };
+		9B26D14D165E740E00EF6EC3 /* TeachRuneUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeachRuneUIView.m; sourceTree = "<group>"; };
 		9B2AD875164A89D5000731E2 /* TargetDummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetDummy.h; sourceTree = "<group>"; };
 		9B2AD876164A89D5000731E2 /* TargetDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetDummy.m; sourceTree = "<group>"; };
 		9B2AD87A164AAC61000731E2 /* RuneDrawingUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuneDrawingUIView.h; sourceTree = "<group>"; };
@@ -142,6 +150,8 @@
 		9B2AD879164AA6BA000731E2 /* Legacy */ = {
 			isa = PBXGroup;
 			children = (
+				9B26D143165E4A3500EF6EC3 /* TeacherUIView.h */,
+				9B26D144165E4A3500EF6EC3 /* TeacherUIView.m */,
 				9BD958DF16030FB100782FC6 /* ViewController.h */,
 				9BD958E016030FB100782FC6 /* ViewController.m */,
 				9BD958E216030FB100782FC6 /* ViewController.xib */,
@@ -156,6 +166,8 @@
 			children = (
 				9B2AD87A164AAC61000731E2 /* RuneDrawingUIView.h */,
 				9B2AD87B164AAC61000731E2 /* RuneDrawingUIView.m */,
+				9B26D14C165E740E00EF6EC3 /* TeachRuneUIView.h */,
+				9B26D14D165E740E00EF6EC3 /* TeachRuneUIView.m */,
 			);
 			name = Drawing;
 			sourceTree = "<group>";
@@ -267,6 +279,7 @@
 			children = (
 				9BD10852165CF800003FB33F /* Spells */,
 				9B5761F216568F0D00D8BB48 /* W.png */,
+				9B26D14A165E724300EF6EC3 /* close@2x.png */,
 				9BE833571653C43400F50E13 /* BlueGraySquare.png */,
 				9BE833551653C3A100F50E13 /* BlueSquare.png */,
 				9B7C7216161EF2F60007B808 /* Default-568h@2x.png */,
@@ -351,6 +364,7 @@
 				9BD10858165CF811003FB33F /* spell_moralShadow1.jpg in Resources */,
 				9BD10859165CF811003FB33F /* spell_moralShadow2.jpg in Resources */,
 				9BD1085E165CFC07003FB33F /* SpellBookViewController.xib in Resources */,
+				9B26D14B165E724300EF6EC3 /* close@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +394,8 @@
 				9B25EA98165CCF4000BA0470 /* MainMenuViewController.m in Sources */,
 				9BD1085D165CFC07003FB33F /* SpellBookViewController.m in Sources */,
 				9B153FE3165D2F71005EBABC /* RuneDisplayerUIView.m in Sources */,
+				9B26D145165E4A3500EF6EC3 /* TeacherUIView.m in Sources */,
+				9B26D14E165E740E00EF6EC3 /* TeachRuneUIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

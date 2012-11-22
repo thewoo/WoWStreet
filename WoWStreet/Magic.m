@@ -92,19 +92,19 @@ static Magic *instance = nil;
 }
 
 
--(NSString *)findRuneWithID:(NSNumber *)runeId {
+-(Rune *)findRuneWithID:(NSNumber *)runeId {
     
-    NSString *runeName = @"";
+    Rune *rune = [[Rune alloc] init];
     
     for (Rune *r in allRunes) {
         
         if (r.Id == runeId) {
-            runeName = r.name;
+            rune = r;
             break;
         }
     }
     
-    return runeName;
+    return rune;
 }
 
 
