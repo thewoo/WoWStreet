@@ -9,23 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "TargetDummy.h"
 #import "RuneDrawingUIView.h"
+#import "RuneDisplayerUIView.h"
 #import "Spell.h"
 
 @interface FightViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UIProgressView *healthBar;
 
+@property (nonatomic, strong) IBOutlet UIButton *backButton;
 
-
-@property (nonatomic, strong) IBOutlet UILabel *firstRuneLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *firstRuneImageView;
-
-@property (nonatomic, strong) IBOutlet UILabel *secondRuneLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *secondRuneImageView;
-
-@property (nonatomic, strong) IBOutlet UILabel *thirdRuneLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *thirdRuneImageView;
-
+@property (nonatomic, strong) RuneDisplayerUIView *firstRuneDisplayerView;
+@property (nonatomic, strong) RuneDisplayerUIView *secondRuneDisplayerView;
+@property (nonatomic, strong) RuneDisplayerUIView *thirdRuneDisplayerView;
 
 
 @property (nonatomic, strong) IBOutlet UIView *spellView;
@@ -38,5 +33,8 @@
 
 @property (nonatomic, strong) NSMutableArray *spellBuilder;
 @property (nonatomic, strong) Spell *spell;
+
+
+-(IBAction)back:(id)sender;
 
 @end

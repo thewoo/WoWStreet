@@ -36,7 +36,7 @@
             
             Spell *spell = [[Spell alloc] init];
             
-            const char *getAllSpellsSQL = [[NSString stringWithFormat:@"Select Spells.name, Spells.damage, Spells.description, RuneSpells.runeId from Spells, RuneSpells where RuneSpells.spellId = Spells.spellID and RuneSpells.spellID = %@", [spellsIDS objectAtIndex:x]] UTF8String];
+            const char *getAllSpellsSQL = [[NSString stringWithFormat:@"Select Spells.name, Spells.damage, Spells.description, Spells.icon, RuneSpells.runeId from Spells, RuneSpells where RuneSpells.spellId = Spells.spellID and RuneSpells.spellID = %@", [spellsIDS objectAtIndex:x]] UTF8String];
             
             if (sqlite3_prepare_v2([SQLiteManager getConnection], getAllSpellsSQL, -1, &sqlStatement, NULL) == SQLITE_OK) {
                 
@@ -47,8 +47,9 @@
                     if (spell.name == nil) spell.name = [NSString stringWithUTF8String:(const char *) sqlite3_column_text(sqlStatement, 0)];
                     if (spell.damage == nil) spell.damage = [NSNumber numberWithInt:sqlite3_column_int(sqlStatement, 1)];
                     if (spell.description == nil) spell.description = [NSString stringWithUTF8String:(const char *) sqlite3_column_text(sqlStatement, 2)];
+                    if (spell.icon == nil) spell.icon = [NSString stringWithUTF8String:(const char *) sqlite3_column_text(sqlStatement, 3)];
                     
-                    [spell.spellsRunes addObject:[NSNumber numberWithInt:sqlite3_column_int(sqlStatement, 3)]];
+                    [spell.spellsRunes addObject:[NSNumber numberWithInt:sqlite3_column_int(sqlStatement, 4)]];
                 }
                 
                 [allSpells addObject:spell];

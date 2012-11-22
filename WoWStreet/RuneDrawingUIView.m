@@ -32,7 +32,6 @@ float quadrantY = -1;
     
     [self setNeedsDisplay];
     
-    
 }
 
 
@@ -68,10 +67,8 @@ float quadrantY = -1;
         
         [self.runeDrawn addObject:point];
         
-        NSLog(@"%f, %f", quadrantX, quadrantY);
-        
+//        NSLog(@"%f, %f", quadrantX, quadrantY);
     }
-    
     
     UITouch *drawingTouch = [[touches allObjects] objectAtIndex:0];
     
@@ -124,7 +121,6 @@ float quadrantY = -1;
     
     [horizontalLine stroke];
     
-    
 }
 
 - (id)initWithFrame:(CGRect)frame {
@@ -140,8 +136,7 @@ float quadrantY = -1;
         [self setBackgroundColor:[UIColor grayColor]];
         
         self.quadrantHeight = frame.size.height / 5;
-        self.quadrantWidth = frame.size.width / 5;
-        
+        self.quadrantWidth = frame.size.width / 5;        
     }
     
     return self;

@@ -13,6 +13,7 @@
 #import "Rune.h"
 #import "SpellsDAO.h"
 #import "Magic.h"
+#import "RuneDisplayerUIView.h"
 
 @interface FightViewController ()
 
@@ -29,14 +30,18 @@
 @synthesize spell;
 @synthesize spellBuilder;
 
-@synthesize firstRuneLabel;
-@synthesize firstRuneImageView;
+@synthesize firstRuneDisplayerView;
+@synthesize secondRuneDisplayerView;
+@synthesize thirdRuneDisplayerView;
 
-@synthesize secondRuneLabel;
-@synthesize secondRuneImageView;
 
-@synthesize thirdRuneLabel;
-@synthesize thirdRuneImageView;
+#pragma mark IBActions.
+
+-(void)back:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];    
+}
+
 
 #pragma mark Actions.
 
@@ -68,9 +73,9 @@
     [self buildSpell];    
     [self.runeDrawingUIView reset];
     
-//    self.dummy.health -= 500;
-//    [self updateHealhtBar];
 }
+
+
 
 
 -(void)buildSpell {
@@ -102,7 +107,6 @@
                     [self.spellView setAlpha:0];
                     
                 } completion:^(BOOL finished) {
-//                    NSLog(@"Spell Casted Shown.");
                 }];
                 
             }];
@@ -124,32 +128,30 @@
     
     if (runeNumber == 1) {
         
-        [self makeRuneFadeIn:firstRuneImageView andLabel:firstRuneLabel];
+        [self makeRuneFadeIn:firstRuneDisplayerView];
         rune = [spellBuilder objectAtIndex:0];
-        [self.firstRuneLabel setText:rune.name];
+        self.firstRuneDisplayerView.runeLabel.text = rune.name;
         
     } else if (runeNumber == 2) {
         
-        [self makeRuneFadeIn:secondRuneImageView andLabel:secondRuneLabel];
+        [self makeRuneFadeIn:secondRuneDisplayerView];
         rune = [spellBuilder objectAtIndex:1];
-        [self.secondRuneLabel setText:rune.name];
+        self.secondRuneDisplayerView.runeLabel.text = rune.name;
         
     } else if (runeNumber == 3) {
         
-        [self makeRuneFadeIn:thirdRuneImageView andLabel:thirdRuneLabel];
+        [self makeRuneFadeIn:thirdRuneDisplayerView];
         rune = [spellBuilder objectAtIndex:2];
-        [self.thirdRuneLabel setText:rune.name];
+        self.thirdRuneDisplayerView.runeLabel.text = rune.name;
         
     }
-    
-    
 }
 
--(void)makeRuneFadeIn:(UIImageView *)runeImageView andLabel:(UILabel *)runeLabel {
+
+-(void)makeRuneFadeIn:(RuneDisplayerUIView *)runeDisplayerVIew {
     
     [UIView animateWithDuration:0.5 animations:^{
-        [runeImageView setAlpha:1];
-        [runeLabel setAlpha:1];
+        [runeDisplayerVIew setAlpha:1];
     }];
     
 }
@@ -162,35 +164,40 @@
     
     [UIView animateWithDuration:0.5 animations:^{
         
-        [firstRuneImageView setAlpha:0];
-        [secondRuneImageView setAlpha:0];
-        [thirdRuneImageView setAlpha:0];
-        
-        [firstRuneLabel setAlpha:0];
-        [secondRuneLabel setAlpha:0];
-        [thirdRuneLabel setAlpha:0];
+        [self.firstRuneDisplayerView setAlpha:0];
+        [self.secondRuneDisplayerView setAlpha:0];
+        [self.thirdRuneDisplayerView setAlpha:0];
         
     }];
 }
-
 
 
 #pragma mark ViewController's.
 
 - (void)viewDidLoad {
     
-    [super viewDidLoad];   
-    
-    [[Magic Get] getAllRunes];
-    [[Magic Get] getAllSpells];
+    [super viewDidLoad];
     
     self.dummy = [[TargetDummy alloc] init];
     self.spellBuilder = [[NSMutableArray alloc] init];
     
     [self updateHealhtBar];
     
+    self.firstRuneDisplayerView = [[RuneDisplayerUIView alloc] initAtX:10 andY:22];
+    [self.view addSubview:firstRuneDisplayerView];
+    [self.firstRuneDisplayerView setAlpha:0];
     
-    self.runeDrawingUIView = [[RuneDrawingUIView alloc] initWithFrame:CGRectMake(0, 0, drawingView.frame.size.width, drawingView.frame.size.height)];    
+    self.secondRuneDisplayerView = [[RuneDisplayerUIView alloc] initAtX:112 andY:22];
+    [self.view addSubview:secondRuneDisplayerView];
+    [self.secondRuneDisplayerView setAlpha:0];
+    
+    self.thirdRuneDisplayerView = [[RuneDisplayerUIView alloc] initAtX:213 andY:22];
+    [self.view addSubview:thirdRuneDisplayerView];
+    [self.thirdRuneDisplayerView setAlpha:0];
+    
+    [self.view bringSubviewToFront:self.spellView];
+    
+    self.runeDrawingUIView = [[RuneDrawingUIView alloc] initWithFrame:CGRectMake(0, 0, drawingView.frame.size.width, drawingView.frame.size.height)];
     [self.drawingView addSubview:runeDrawingUIView];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(castSpell:)];

@@ -21,6 +21,8 @@
 -(Spell *)findSpellWithRunes:(NSMutableArray *)runesArray;
 -(Rune *)recognizeRune:(NSMutableArray *)runeDrawn;
 
+-(NSString *)findRuneWithID:(NSNumber *)runeId;
+
 +(Magic *)Get;
 
 

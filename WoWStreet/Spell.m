@@ -13,6 +13,7 @@
 @synthesize name;
 @synthesize damage;
 @synthesize description;
+@synthesize icon;
 
 @synthesize spellsRunes;
 

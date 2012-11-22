@@ -9,8 +9,11 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "FightViewController.h"
+#import "MainMenuViewController.h"
 
 @implementation AppDelegate
+
+@synthesize navController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -19,9 +22,17 @@
 //    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
 //    self.window.rootViewController = self.viewController;
     
-    FightViewController *fightViewController = [[FightViewController alloc] initWithNibName:@"FightViewController" bundle:nil];
-    self.window.rootViewController = fightViewController;
+//    FightViewController *fightViewController = [[FightViewController alloc] initWithNibName:@"FightViewController" bundle:nil];
+//    self.window.rootViewController = fightViewController;
     
+    
+    MainMenuViewController *mainMenuViewController = [[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
+//    self.window.rootViewController = mainMenuViewController;
+    
+    self.navController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
+    [self.navController setNavigationBarHidden:YES];
+    
+    [self.window setRootViewController:self.navController];
     
     [self.window makeKeyAndVisible];
     return YES;

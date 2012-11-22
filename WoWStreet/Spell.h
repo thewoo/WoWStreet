@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSNumber *damage;
 @property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *icon;
 
 @property (nonatomic, strong) NSMutableArray *spellsRunes;
 

@@ -92,6 +92,21 @@ static Magic *instance = nil;
 }
 
 
+-(NSString *)findRuneWithID:(NSNumber *)runeId {
+    
+    NSString *runeName = @"";
+    
+    for (Rune *r in allRunes) {
+        
+        if (r.Id == runeId) {
+            runeName = r.name;
+            break;
+        }
+    }
+    
+    return runeName;
+}
+
 
 
 
