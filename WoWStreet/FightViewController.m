@@ -31,16 +31,46 @@
 @synthesize spellBuilder;
 
 @synthesize firstRuneDisplayerView;
+@synthesize firstRuneButton;
+
 @synthesize secondRuneDisplayerView;
+@synthesize secondRuneButton;
+
 @synthesize thirdRuneDisplayerView;
+@synthesize thirdRuneButton;
 
 
 #pragma mark IBActions.
 
--(void)back:(id)sender {
+-(IBAction)back:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];    
 }
+
+-(IBAction)undoFirstRune:(id)sender {
+    
+    if ([spellBuilder count] == 1) {
+        [self makeRuneFadeOut:firstRuneDisplayerView];
+        [self.spellBuilder removeLastObject];
+    }    
+}
+
+-(IBAction)undoSecondRune:(id)sender {
+    
+    if ([spellBuilder count] == 2) {
+        [self makeRuneFadeOut:secondRuneDisplayerView];
+        [self.spellBuilder removeLastObject];
+    }
+}
+
+-(IBAction)undoThirdRune:(id)sender {
+    
+    if ([spellBuilder count] == 3) {
+        [self makeRuneFadeOut:thirdRuneDisplayerView];
+        [self.spellBuilder removeLastObject];
+    }
+}
+
 
 
 #pragma mark Actions.
@@ -57,7 +87,6 @@
     }
     
     [self.healthBar setProgress:((dummy.health * 100)/dummy.maxHealth)/100 animated:YES];
-    
 }
 
 
@@ -72,7 +101,6 @@
     
     [self buildSpell];    
     [self.runeDrawingUIView reset];
-    
 }
 
 
@@ -142,18 +170,23 @@
         
         [self makeRuneFadeIn:thirdRuneDisplayerView];
         rune = [spellBuilder objectAtIndex:2];
-        self.thirdRuneDisplayerView.runeLabel.text = rune.name;
-        
+        self.thirdRuneDisplayerView.runeLabel.text = rune.name;        
     }
 }
 
 
--(void)makeRuneFadeIn:(RuneDisplayerUIView *)runeDisplayerVIew {
+-(void)makeRuneFadeIn:(RuneDisplayerUIView *)runeDisplayerView {
     
     [UIView animateWithDuration:0.5 animations:^{
-        [runeDisplayerVIew setAlpha:1];
+        [runeDisplayerView setAlpha:1];
     }];
+}
+
+-(void)makeRuneFadeOut:(RuneDisplayerUIView *)runeDisplayerView {
     
+    [UIView animateWithDuration:0.5 animations:^{
+        [runeDisplayerView setAlpha:0];
+    }];
 }
 
 
@@ -187,14 +220,19 @@
     [self.view addSubview:firstRuneDisplayerView];
     [self.firstRuneDisplayerView setAlpha:0];
     
+    [self.view bringSubviewToFront:self.firstRuneButton];
+    
     self.secondRuneDisplayerView = [[RuneDisplayerUIView alloc] initAtX:112 andY:22];
     [self.view addSubview:secondRuneDisplayerView];
     [self.secondRuneDisplayerView setAlpha:0];
+    
+    [self.view bringSubviewToFront:self.secondRuneButton];
     
     self.thirdRuneDisplayerView = [[RuneDisplayerUIView alloc] initAtX:213 andY:22];
     [self.view addSubview:thirdRuneDisplayerView];
     [self.thirdRuneDisplayerView setAlpha:0];
     
+    [self.view bringSubviewToFront:self.thirdRuneButton];    
     [self.view bringSubviewToFront:self.spellView];
     
     self.runeDrawingUIView = [[RuneDrawingUIView alloc] initWithFrame:CGRectMake(0, 0, drawingView.frame.size.width, drawingView.frame.size.height)];

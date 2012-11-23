@@ -25,7 +25,6 @@
 @property (nonatomic, strong) RuneDisplayerUIView *thirdRuneDisplayerView;
 @property (nonatomic, strong) IBOutlet UIButton *thirdRuneTeacherButton;
 
-
 @property (nonatomic, strong) IBOutlet UIView *modalView;
 @property (nonatomic, strong) IBOutlet UIButton *closeButton;
 @property (nonatomic, strong) IBOutlet UIView *teachingView;

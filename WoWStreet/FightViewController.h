@@ -16,13 +16,17 @@
 
 @property (nonatomic, strong) IBOutlet UIProgressView *healthBar;
 
-@property (nonatomic, strong) IBOutlet UIButton *backButton;
-
 @property (nonatomic, strong) RuneDisplayerUIView *firstRuneDisplayerView;
+@property (nonatomic, strong) IBOutlet UIButton *firstRuneButton;
+
 @property (nonatomic, strong) RuneDisplayerUIView *secondRuneDisplayerView;
+@property (nonatomic, strong) IBOutlet UIButton *secondRuneButton;
+
 @property (nonatomic, strong) RuneDisplayerUIView *thirdRuneDisplayerView;
+@property (nonatomic, strong) IBOutlet UIButton *thirdRuneButton;
 
 
+@property (nonatomic, strong) IBOutlet UIButton *backButton;
 @property (nonatomic, strong) IBOutlet UIView *spellView;
 @property (nonatomic, strong) IBOutlet UILabel *spellLabel;
 
@@ -36,5 +40,9 @@
 
 
 -(IBAction)back:(id)sender;
+
+-(IBAction)undoFirstRune:(id)sender;
+-(IBAction)undoSecondRune:(id)sender;
+-(IBAction)undoThirdRune:(id)sender;
 
 @end
