@@ -29,6 +29,7 @@ int count = 1;
     
     self.bezierPath = [[UIBezierPath alloc] init];
     self.drawingPath = [[NSMutableArray alloc] init];
+    count = 1;
     [self setNeedsDisplay];
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(steppedDrawing:) userInfo:nil repeats:YES];
@@ -42,14 +43,14 @@ int count = 1;
         
         Points *pp = [rune.runePoints objectAtIndex:count-1];
         
-        [self.bezierPath moveToPoint:CGPointMake(pp.x*quadrantWidth, pp.y*quadrantHeight)];
+        [self.bezierPath moveToPoint:CGPointMake(pp.x*quadrantWidth+(quadrantWidth*0.5), pp.y*quadrantHeight+(quadrantHeight*0.5))];
         
         [self.bezierPath setLineWidth:20];
         [self.bezierPath setLineCapStyle:kCGLineCapRound];
         
         Points *p = [rune.runePoints objectAtIndex:count];
         
-        [self.bezierPath addLineToPoint:CGPointMake(p.x*quadrantWidth, p.y*quadrantHeight)];
+        [self.bezierPath addLineToPoint:CGPointMake(p.x*quadrantWidth+(quadrantWidth*0.5), p.y*quadrantHeight+(quadrantHeight*0.5))];
         [self.drawingPath addObject:bezierPath];
         
         count++;

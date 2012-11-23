@@ -17,6 +17,7 @@
 
 @implementation MainMenuViewController
 
+@synthesize fightViewController;
 @synthesize trainButton;
 @synthesize spellBookButton;
 
@@ -24,8 +25,11 @@
 
 -(IBAction)openTrainingSession:(id)sender {
     
-    FightViewController *fightViewController = [[FightViewController alloc] initWithNibName:@"FightViewController" bundle:nil];
-    [self.navigationController pushViewController:fightViewController animated:YES];    
+    if (!fightViewController) {
+        fightViewController = [[FightViewController alloc] initWithNibName:@"FightViewController" bundle:nil];
+    }
+    
+    [self.navigationController pushViewController:fightViewController animated:YES];
 }
 
 

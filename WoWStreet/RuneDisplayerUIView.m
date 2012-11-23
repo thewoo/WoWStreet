@@ -10,14 +10,15 @@
 
 @implementation RuneDisplayerUIView
 
-//@synthesize rune = _rune;
+@synthesize rune;
 @synthesize runeLabel;
 
 #pragma mark UIView's.
 
-//-(void)setRune:(Rune *)rune {
-//    self.runeLabel.text = rune.name;
-//}
+-(void)setRune:(Rune *)runeValue {
+    self.runeLabel.text = runeValue.name;
+    rune = runeValue;
+}
 
 -(id)initAtX:(int)x andY:(int)y {
     

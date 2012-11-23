@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FightViewController.h"
 
 @interface MainMenuViewController : UIViewController
+
+@property (nonatomic, strong) FightViewController *fightViewController;
 
 @property (nonatomic, strong) IBOutlet UIButton *trainButton;
 @property (nonatomic, strong) IBOutlet UIButton *spellBookButton;

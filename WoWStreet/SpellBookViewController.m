@@ -34,8 +34,6 @@
 
 -(IBAction)teachFirstRune:(id)sender {
     
-    NSLog(@"teachFirstRune: %@", self.firstRuneDisplayerView.rune);
-    
     if (firstRuneDisplayerView.rune != nil) {
         [self.modalView setHidden:NO];
         self.teachRuneView.rune = firstRuneDisplayerView.rune;
@@ -44,9 +42,7 @@
 }
 
 -(IBAction)teachSecondRune:(id)sender {
-    
-    NSLog(@"teachSecondRune: %@", secondRuneDisplayerView.rune);
-    
+        
     if (secondRuneDisplayerView.rune != nil) {
         [self.modalView setHidden:NO];
         self.teachRuneView.rune = secondRuneDisplayerView.rune;
@@ -55,9 +51,7 @@
 }
 
 -(IBAction)teachThirdRune:(id)sender {
-    
-    NSLog(@"teachThirdRune: %@", thirdRuneDisplayerView.rune);
-    
+        
     if (thirdRuneDisplayerView.rune != nil) {
         [self.modalView setHidden:NO];
         self.teachRuneView.rune = thirdRuneDisplayerView.rune;
@@ -143,15 +137,18 @@
     
     self.firstRuneDisplayerView = [[RuneDisplayerUIView alloc] initAtX:10 andY:350];
     [self.view addSubview:firstRuneDisplayerView];
-
+    
     [self.view bringSubviewToFront:self.firstRuneTeacherButton];
-
     
     self.secondRuneDisplayerView = [[RuneDisplayerUIView alloc] initAtX:112 andY:350];
     [self.view addSubview:secondRuneDisplayerView];
     
+    [self.view bringSubviewToFront:self.secondRuneTeacherButton];
+    
     self.thirdRuneDisplayerView = [[RuneDisplayerUIView alloc] initAtX:213 andY:350];
     [self.view addSubview:thirdRuneDisplayerView];
+    
+    [self.view bringSubviewToFront:self.thirdRuneTeacherButton];
     
     [self.view bringSubviewToFront:self.modalView];
     
